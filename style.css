@@ -446,35 +446,66 @@ section { scroll-margin-top: 62px; }
   position: relative;
   height: 100%;
   background: transparent;
-  padding: 0.4rem 0.4rem 0.2rem;
+  padding: 0.4rem 0.5rem 0.2rem;
+  text-align: left;
 }
 
 .step-tag {
   display: inline-block;
-  padding: 0.44rem 0.9rem;
+  padding: 0.44rem 0.8rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 202, 117, 0.8);
   background: rgba(10, 25, 35, 0.08);
   color: #f4c875;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   letter-spacing: 0.12em;
   font-weight: 700;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
 }
 
+.step-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.55rem;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 800;
+  border: 2px solid rgba(255,255,255,0.72);
+  box-shadow: 0 12px 18px rgba(0,0,0,0.18);
+}
+
+.step-number-1 { background: linear-gradient(135deg, #ff7b2a, #f25d00); }
+.step-number-2 { background: linear-gradient(135deg, #f8b322, #f18a00); }
+.step-number-3 { background: linear-gradient(135deg, #9fd344, #6ac04b); }
+.step-number-4 { background: linear-gradient(135deg, #28cfb0, #1cae96); }
+
 .step-box h5 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  margin: 0;
+  font-size: clamp(1.18rem, 1.9vw, 1.9rem);
   color: #ecf3ff;
   letter-spacing: -0.05em;
   font-weight: 700;
+  line-height: 1.12;
 }
 
 .step-box p {
   margin: 0;
   color: rgba(225, 233, 242, 0.82);
-  font-size: 1.04rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 @media (max-width: 767px) {
@@ -519,31 +550,22 @@ section { scroll-margin-top: 62px; }
   }
 
   .step-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.9rem;
-    padding: 0.45rem 0.15rem;
+    display: block;
+    padding: 0.3rem 0.15rem;
     text-align: left;
   }
 
-  .step-box .enrol-node {
-    position: static;
-    transform: none;
-    width: 52px;
-    height: 52px;
-    min-width: 52px;
-    margin-top: 0.2rem;
-    border-width: 3px;
-    box-shadow: 0 0 0 8px rgba(255,255,255,0.02), 0 8px 16px rgba(0,0,0,0.18);
+  .step-heading {
+    gap: 0.55rem;
+    margin-bottom: 0.2rem;
   }
 
-  .step-box .node-badge {
-    font-size: 0.8rem;
-  }
-
-  .step-content {
-    flex: 1;
-    min-width: 0;
+  .step-number {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 0.72rem;
+    border-width: 2px;
   }
 
   .step-tag {
@@ -555,7 +577,7 @@ section { scroll-margin-top: 62px; }
   }
 
   .step-box h5 {
-    margin: 0 0 0.28rem;
+    margin: 0;
     font-size: 1.15rem;
     line-height: 1.2;
   }
