@@ -167,10 +167,131 @@ section { scroll-margin-top: 62px; }
 .btn-warning { background: var(--yellow); border-color: var(--yellow); font-weight: 600; }
 .btn { transition: transform .15s; }
 .btn:hover { transform: translateY(-2px); }
+
+.admission-shell {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(19, 59, 89, 0.08);
+  border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(12, 28, 44, 0.12);
+  overflow: hidden;
+}
+
+.admission-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, rgba(9, 26, 39, 0.95), rgba(16, 52, 82, 0.95));
+  color: #fff;
+}
+
+.admission-kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.admission-header h3 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.7rem, 2vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  background: rgba(245, 183, 0, 0.16);
+  border: 1px solid rgba(245, 183, 0, 0.5);
+  font-size: 1.5rem;
+  color: #f5b700;
+}
+
+.admission-form {
+  padding: 1.7rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.96));
+}
+
+.admission-form .form-control,
+.admission-form .form-select,
+.admission-form textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(18, 57, 83, 0.14);
+  box-shadow: none;
+  min-height: 48px;
+  background: rgba(255,255,255,0.92);
+}
+
+.admission-form .form-control:focus,
+.admission-form .form-select:focus,
+.admission-form textarea:focus {
+  border-color: rgba(26, 95, 212, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(26, 95, 212, 0.12);
+}
+
+.admission-form .form-label {
+  margin-bottom: 0.55rem;
+  color: #1d3a52;
+}
+
+.admission-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.admission-actions .btn {
+  min-width: 220px;
+  border-radius: 14px;
+  padding: 0.9rem 1.5rem;
+}
 /* ===== FORMS & CARDS END ===== */
 
 /* ===== COURSES (PRICING CARDS) START ===== */
 :root { --blue: #1a5fd4; }
+.course-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  max-width: 700px;
+}
+
+.filter-btn {
+  border: 1px solid rgba(15, 42, 67, 0.15);
+  background: rgba(255,255,255,0.82);
+  color: var(--navy);
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(15, 42, 67, 0.16);
+}
+
+.course-item {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.course-item.hidden {
+  display: none;
+}
+
 .plan { position: relative; height: 100%; display: flex; flex-direction: column; background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%); border: 1px solid #dbe4f0; border-radius: 18px; padding: 1.6rem 1.4rem; transition: transform .25s, box-shadow .25s; overflow: hidden; }
 .plan::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: linear-gradient(90deg, rgba(26,95,212,0.9), rgba(245,183,0,0.9)); }
 .plan:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(15, 42, 67, .16); }
@@ -186,6 +307,269 @@ section { scroll-margin-top: 62px; }
 .plan-btn { background: linear-gradient(135deg, var(--blue), #0f4ab6); border: none; color: #fff; width: 100%; padding: .7rem; border-radius: 10px; font-weight: 700; }
 .plan-btn:hover { background: linear-gradient(135deg, #0f4ab6, #0a3a95); color: #fff; }
 /* ===== COURSES (PRICING CARDS) END ===== */
+
+/* ===== HOW TO ENROL / FLOW START ===== */
+.enrol-section {
+  overflow: hidden;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #f1f1f1;
+  color: #0f1d2b;
+}
+
+.enrol-intro {
+  margin-bottom: 1.3rem;
+}
+
+.enrol-intro h2 {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.96;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  color: #15283a;
+}
+
+.enrol-intro p {
+  margin: 0.8rem 0 0;
+  color: rgba(19, 37, 52, 0.72);
+  font-size: 1.15rem;
+}
+
+.enrol-panel {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(30,38,47,0.95) 0%, rgba(23,36,44,0.96) 35%, rgba(16,62,75,0.95) 100%);
+  border-radius: 28px;
+  padding: 1.1rem 1.2rem 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 18px 32px rgba(17, 29, 38, 0.12);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+.enrol-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 28px;
+  padding: 4px;
+  background: linear-gradient(90deg, #f76a20 0%, #f4a528 28%, #cae544 60%, #2cc7a5 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.enrol-flow {
+  position: relative;
+  z-index: 1;
+  height: 220px;
+  margin: 0 auto 1rem;
+  max-width: 1160px;
+  background: rgba(179, 193, 206, 0.04);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.enrol-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.enrol-node {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  border: 4px solid rgba(255,255,255,0.72);
+  box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.02), 0 10px 18px rgba(0,0,0,0.24);
+  z-index: 2;
+}
+
+.enrol-node-1 { left: 14%; background: linear-gradient(135deg, #ff7b2a, #f25d00); }
+.enrol-node-2 { left: 39%; background: linear-gradient(135deg, #f8b322, #f18a00); }
+.enrol-node-3 { left: 63%; background: linear-gradient(135deg, #9fd344, #6ac04b); }
+.enrol-node-4 { left: 87%; background: linear-gradient(135deg, #28cfb0, #1cae96); }
+
+.node-badge {
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.car-mover {
+  position: absolute;
+  top: 52%;
+  left: 87%;
+  width: 58px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(36, 212, 191, 0.3), rgba(14, 119, 110, 0.16));
+  border: 2px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  animation: carDrive 8s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes carDrive {
+  0% { left: 14%; opacity: 0.25; }
+  12% { opacity: 1; }
+  28% { left: 30%; }
+  42% { left: 39%; }
+  64% { left: 63%; }
+  80% { left: 76%; }
+  100% { left: 87%; opacity: 1; }
+}
+
+.enrol-cards {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.2rem;
+}
+
+.step-box {
+  position: relative;
+  height: 100%;
+  background: transparent;
+  padding: 0.4rem 0.4rem 0.2rem;
+}
+
+.step-tag {
+  display: inline-block;
+  padding: 0.44rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 202, 117, 0.8);
+  background: rgba(10, 25, 35, 0.08);
+  color: #f4c875;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.step-box h5 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: #ecf3ff;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.step-box p {
+  margin: 0;
+  color: rgba(225, 233, 242, 0.82);
+  font-size: 1.04rem;
+}
+
+@media (max-width: 767px) {
+  .enrol-section {
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .enrol-intro h2 {
+    font-size: 2.15rem;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .enrol-intro p {
+    font-size: 0.9rem;
+    margin-top: 0.55rem;
+  }
+
+  .enrol-panel {
+    padding: 0.8rem 0.8rem 0.4rem;
+    border-radius: 18px;
+  }
+
+  .enrol-panel::before {
+    border-radius: 18px;
+    padding: 2px;
+  }
+
+  .enrol-flow {
+    display: none;
+  }
+
+  .enrol-cards {
+    margin-top: 0;
+  }
+
+  .enrol-cards > [class*="col"] {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .step-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.45rem 0.15rem;
+    text-align: left;
+  }
+
+  .step-box .enrol-node {
+    position: static;
+    transform: none;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    margin-top: 0.2rem;
+    border-width: 3px;
+    box-shadow: 0 0 0 8px rgba(255,255,255,0.02), 0 8px 16px rgba(0,0,0,0.18);
+  }
+
+  .step-box .node-badge {
+    font-size: 0.8rem;
+  }
+
+  .step-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .step-tag {
+    display: inline-block;
+    margin-bottom: 0.45rem;
+    padding: 0.32rem 0.7rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+  }
+
+  .step-box h5 {
+    margin: 0 0 0.28rem;
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .step-box p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .car-mover { animation: none; }
+}
+/* ===== HOW TO ENROL / FLOW END ===== */
 
 /* ===== ABOUT / CONTACT START ===== */
 .cert { min-height: 260px; border: 2px dashed #b9c3cf; border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; color: #7a8794; }
