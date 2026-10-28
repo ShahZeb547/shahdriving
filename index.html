@@ -163,10 +163,18 @@
 <section id="courses" class="sec sec-bg sec-light" style="--bgimg:url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=1600&q=60')">
   <div class="container">
     <div class="sec-head"><h2>Our courses</h2><p>Pick the package that matches your driving level.</p></div>
-    
-    <div class="row g-4">
-      
-      <div class="col-md-6 col-xl-4">
+
+    <div class="course-filter" aria-label="Course filters">
+      <button type="button" class="filter-btn active" data-filter="all">All</button>
+      <button type="button" class="filter-btn" data-filter="car">Car</button>
+      <button type="button" class="filter-btn" data-filter="bike">Bike</button>
+      <button type="button" class="filter-btn" data-filter="ltv">LTV</button>
+      <button type="button" class="filter-btn" data-filter="manual">Auto + Manual</button>
+    </div>
+
+    <div class="row g-4" id="courseGrid">
+
+      <div class="col-md-6 col-xl-4 course-item" data-category="car manual">
         <div class="plan plan-featured">
           <span class="plan-badge">Best seller</span>
           <div class="plan-icon"><i class="bi bi-award-fill"></i></div>
@@ -181,7 +189,7 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-xl-4">
+      <div class="col-md-6 col-xl-4 course-item" data-category="ltv">
         <div class="plan plan-featured">
           <span class="plan-badge">Best seller</span>
           <div class="plan-icon"><i class="bi bi-star-fill"></i></div>
@@ -195,8 +203,8 @@
           <button type="button" class="btn plan-btn choose-package" data-package="LTV - 45 lessons - Rs 40,000">Choose package</button>
         </div>
       </div>
-      
-      <div class="col-md-6 col-xl-4">
+
+      <div class="col-md-6 col-xl-4 course-item" data-category="bike">
         <div class="plan">
           <div class="plan-icon"><i class="bi bi-bicycle"></i></div>
           <h5>Bike + License</h5>
@@ -210,7 +218,7 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-xl-4">
+      <div class="col-md-6 col-xl-4 course-item" data-category="car manual">
         <div class="plan">
           <div class="plan-icon"><i class="bi bi-car-front-fill"></i></div>
           <h5>Car Auto + Manual</h5>
@@ -224,7 +232,7 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-xl-4">
+      <div class="col-md-6 col-xl-4 course-item" data-category="car">
         <div class="plan">
           <div class="plan-icon"><i class="bi bi-car-front"></i></div>
           <h5>Car</h5>
@@ -238,8 +246,7 @@
         </div>
       </div>
 
-
-      <div class="col-md-6 col-xl-4">
+      <div class="col-md-6 col-xl-4 course-item" data-category="ltv">
         <div class="plan">
           <div class="plan-icon"><i class="bi bi-map"></i></div>
           <h5>LTV</h5>
@@ -253,7 +260,7 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-xl-4">
+      <div class="col-md-6 col-xl-4 course-item" data-category="ltv">
         <div class="plan">
           <div class="plan-icon"><i class="bi bi-joystick"></i></div>
           <h5>LTV</h5>
@@ -272,14 +279,96 @@
 <!-- ===== COURSES END ===== -->
 
 <!-- ===== HOW TO ENROL START ===== -->
-<section class="sec sec-bg sec-dark" style="--bgimg:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1600&q=60')">
+<section class="enrol-section">
   <div class="container">
-    <div class="sec-head"><h2>How to enrol</h2><p>Four simple steps.</p></div>
-    <div class="row g-4 text-center">
-      <div class="col-sm-6 col-lg-3"><div class="step"><span>1</span><h5>Choose a course</h5><p>Pick the package that suits you.</p></div></div>
-      <div class="col-sm-6 col-lg-3"><div class="step"><span>2</span><h5>Fill the form</h5><p>Submit your details and photo.</p></div></div>
-      <div class="col-sm-6 col-lg-3"><div class="step"><span>3</span><h5>Pay the fee</h5><p>Upload your payment receipt.</p></div></div>
-      <div class="col-sm-6 col-lg-3"><div class="step"><span>4</span><h5>Start driving</h5><p>Begin on your chosen date.</p></div></div>
+    <div class="enrol-intro">
+      <h2>Four simple steps</h2>
+      <p>Start driving on the date you choose.</p>
+    </div>
+
+    <div class="enrol-panel">
+      <div class="enrol-flow" aria-label="How to enrol">
+        <svg class="enrol-svg" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="enrol-road-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f76523"/>
+              <stop offset="25%" stop-color="#f7a12a"/>
+              <stop offset="50%" stop-color="#f4d821"/>
+              <stop offset="75%" stop-color="#7ed85a"/>
+              <stop offset="100%" stop-color="#2cc7a7"/>
+            </linearGradient>
+          </defs>
+          <path d="M 78 120 C 180 40, 270 82, 310 120 S 490 175, 610 120 S 800 42, 920 118" stroke="url(#enrol-road-gradient)" stroke-width="5" stroke-linecap="round" stroke-dasharray="12 12" fill="none"/>
+        </svg>
+
+        <div class="enrol-node enrol-node-1">
+          <div class="node-badge">01</div>
+        </div>
+        <div class="enrol-node enrol-node-2">
+          <div class="node-badge">02</div>
+        </div>
+        <div class="enrol-node enrol-node-3">
+          <div class="node-badge">03</div>
+        </div>
+        <div class="enrol-node enrol-node-4">
+          <div class="node-badge">04</div>
+        </div>
+
+        <div class="car-mover" aria-hidden="true">
+          <i class="bi bi-car-front-fill"></i>
+        </div>
+      </div>
+
+      <div class="row g-4 text-center enrol-cards">
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-box">
+            <div class="enrol-node enrol-node-1">
+              <div class="node-badge">01</div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">STEP 01 • CHOOSE</span>
+              <h5>Choose a course</h5>
+              <p>Pick the package that suits you.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-box">
+            <div class="enrol-node enrol-node-2">
+              <div class="node-badge">02</div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">STEP 02 • APPLY</span>
+              <h5>Fill the form</h5>
+              <p>Submit your details.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-box">
+            <div class="enrol-node enrol-node-3">
+              <div class="node-badge">03</div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">STEP 03 • PAY</span>
+              <h5>Pay the fee</h5>
+              <p>Share your payment receipt.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-box">
+            <div class="enrol-node enrol-node-4">
+              <div class="node-badge">04</div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">STEP 04 • DRIVE</span>
+              <h5>Start driving</h5>
+              <p>Begin on your chosen date.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -289,76 +378,140 @@
 <section id="admission" class="sec sec-bg sec-light" style="--bgimg:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=60')">
   <div class="container">
     <div class="sec-head"><h2>Admission form</h2><p>Fill in your details to enrol in a driving course.</p></div>
-    <form id="admissionForm" class="card-box" novalidate>
-      <div class="row g-3">
-        <div class="col-md-4"><label class="form-label">First name</label><input name="first_name" class="form-control" required></div>
-        <div class="col-md-4"><label class="form-label">Middle name</label><input name="middle_name" class="form-control"></div>
-        <div class="col-md-4"><label class="form-label">Last name</label><input name="last_name" class="form-control" required></div>
 
-        <div class="col-md-6"><label class="form-label">Father name</label><input name="father_name" class="form-control" required></div>
-        <div class="col-md-6"><label class="form-label">CNIC no</label><input name="cnic" class="form-control" placeholder="12345-1234567-1" pattern="\d{5}-\d{7}-\d" required></div>
-
-        <div class="col-md-4"><label class="form-label">Gender</label>
-          <select name="gender" class="form-select" required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
-        <div class="col-md-4"><label class="form-label">Date of birth</label><input type="date" name="dob" class="form-control" required></div>
-        <div class="col-md-4"><label class="form-label">License status</label>
-          <select name="license_status" class="form-select" required><option value="">Select</option><option>No license</option><option>Learner permit</option><option>Already have a license</option></select></div>
-
-        <div class="col-md-6"><label class="form-label">Contact no</label><input type="tel" name="phone" class="form-control" placeholder="03XX XXXXXXX" required></div>
-        <div class="col-md-6"><label class="form-label">Email</label><input type="email" name="email" class="form-control" required></div>
-
-        <div class="col-md-6">
-          <label class="form-label">Profile image</label>
-          <input type="file" name="profile" id="profileInput" class="form-control" accept="image/*" required>
-          <img id="profilePreview" class="preview d-none" alt="Profile preview">
+    <div class="admission-shell">
+      <div class="admission-header">
+        <div>
+          <span class="admission-kicker">Student Enrolment</span>
+          <h3>Driving Admission</h3>
         </div>
-        <div class="col-md-6"><label class="form-label">Address</label><textarea name="address" class="form-control" rows="3" required></textarea></div>
+        <div class="header-badge"><i class="bi bi-clipboard-check"></i></div>
+      </div>
 
-        <div class="col-md-4"><label class="form-label">Training package</label>
-          <select name="package" class="form-select" required>
-            <option value="">Select</option>
-            <option>Bike + License - Rs 8,000</option>
-            <option>Car Auto + Manual - Rs 20,000</option>
-            <option>Car - Rs 12,000</option>
-            <option>Car Auto + Manual - Rs 35,000</option>
-            <option>LTV - 45 lessons - Rs 40,000</option>
-            <option>LTV - 30 lessons - Rs 25,000</option>
-            <option>LTV - 15 lessons - Rs 15,000</option>
-          </select>
-        </div>
-        <div class="col-md-4"><label class="form-label">Payment method</label>
-          <select name="payment" class="form-select" required><option value="">Select</option><option>Cash</option><option>Bank transfer</option><option>JazzCash</option><option>Easypaisa</option></select></div>
-        <div class="col-md-4"><label class="form-label">Starting date</label><input type="date" name="start_date" class="form-control" required></div>
+      <form id="admissionForm" class="admission-form" novalidate>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <label class="form-label">First name</label>
+            <input name="first_name" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Middle name</label>
+            <input name="middle_name" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Last name</label>
+            <input name="last_name" class="form-control" required>
+          </div>
 
-        <div class="col-12">
-          <label class="form-label">Receipt picture</label>
-          <input type="file" name="receipt" id="receiptInput" class="form-control" accept="image/*" required>
-          <img id="receiptPreview" class="preview d-none" alt="Receipt preview">
-        </div>
+          <div class="col-md-6">
+            <label class="form-label">Father name</label>
+            <input name="father_name" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">CNIC no</label>
+            <input name="cnic" class="form-control" placeholder="12345-1234567-1" pattern="\d{5}-\d{7}-\d" required>
+          </div>
 
-        <!-- Terms and conditions -->
-        <div class="col-12">
-          <div class="terms">
-            <h6>Terms and Conditions</h6>
-            <ol>
-              <li>All information provided is accurate and true.</li>
-              <li>I understand that fees are non-refundable after admission.</li>
-              <li>I agree to follow the rules and instructions of Shah Driving Center.</li>
-              <li>In case of any car accident (caused by student) while learning driving, student will pay for the repairs and other maintenance of the car.</li>
-              <li>Institute has a right to cancel registration any time due to bad behaviour of student or any other reason.</li>
-            </ol>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="terms" required>
-              <label class="form-check-label" for="terms">I have read and agree to the terms and conditions.</label>
+          <div class="col-md-4">
+            <label class="form-label">Gender</label>
+            <select name="gender" class="form-select" required>
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Date of birth</label>
+            <input type="date" name="dob" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">License status</label>
+            <select name="license_status" class="form-select" required>
+              <option value="">Select</option>
+              <option>No license</option>
+              <option>Learner permit</option>
+              <option>Already have a license</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Contact no</label>
+            <input type="tel" name="phone" class="form-control" placeholder="03XX XXXXXXX" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Profile image</label>
+            <input type="file" name="profile" id="profileInput" class="form-control" accept="image/*" required>
+            <img id="profilePreview" class="preview d-none" alt="Profile preview">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Address</label>
+            <textarea name="address" class="form-control" rows="3" required></textarea>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Training package</label>
+            <select name="package" class="form-select" required>
+              <option value="">Select</option>
+              <option>Bike + License - Rs 8,000</option>
+              <option>Car Auto + Manual - Rs 20,000</option>
+              <option>Car - Rs 12,000</option>
+              <option>Car Auto + Manual - Rs 35,000</option>
+              <option>LTV - 45 lessons - Rs 40,000</option>
+              <option>LTV - 30 lessons - Rs 25,000</option>
+              <option>LTV - 15 lessons - Rs 15,000</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Payment method</label>
+            <select name="payment" class="form-select" required>
+              <option value="">Select</option>
+              <option>Cash</option>
+              <option>Bank transfer</option>
+              <option>JazzCash</option>
+              <option>Easypaisa</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Starting date</label>
+            <input type="date" name="start_date" class="form-control" required>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Receipt picture</label>
+            <input type="file" name="receipt" id="receiptInput" class="form-control" accept="image/*" required>
+            <img id="receiptPreview" class="preview d-none" alt="Receipt preview">
+          </div>
+
+          <div class="col-12">
+            <div class="terms">
+              <h6>Terms and Conditions</h6>
+              <ol>
+                <li>All information provided is accurate and true.</li>
+                <li>I understand that fees are non-refundable after admission.</li>
+                <li>I agree to follow the rules and instructions of Shah Driving Center.</li>
+                <li>In case of any car accident (caused by student) while learning driving, student will pay for the repairs and other maintenance of the car.</li>
+                <li>Institute has a right to cancel registration any time due to bad behaviour of student or any other reason.</li>
+              </ol>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="terms" required>
+                <label class="form-check-label" for="terms">I have read and agree to the terms and conditions.</label>
+              </div>
             </div>
           </div>
+
+          <div class="col-12 admission-actions">
+            <button class="btn btn-warning btn-lg" type="submit">Submit admission</button>
+            <div id="admissionMsg" class="mt-3" role="status"></div>
+          </div>
         </div>
-        <div class="col-12">
-          <button class="btn btn-warning btn-lg" type="submit">Submit admission</button>
-          <div id="admissionMsg" class="mt-3" role="status"></div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </section>
 <!-- ===== ADMISSION FORM END ===== -->
