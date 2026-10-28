@@ -107,3 +107,17 @@ $('.choose-package').on('click', function () {
   document.getElementById('admission').scrollIntoView({ behavior: 'smooth' });
 });
 /* ===== CHOOSE PACKAGE END ===== */
+
+/* ===== COURSE FILTER START ===== */
+$('.filter-btn').on('click', function () {
+  const filter = $(this).data('filter');
+  $('.filter-btn').removeClass('active');
+  $(this).addClass('active');
+
+  $('.course-item').each(function () {
+    const categories = $(this).data('category') || '';
+    const matches = filter === 'all' || categories.toString().toLowerCase().includes(filter);
+    $(this).toggleClass('hidden', !matches);
+  });
+});
+/* ===== COURSE FILTER END ===== */
