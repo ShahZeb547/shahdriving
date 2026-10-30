@@ -12,9 +12,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- ===== LIBRARIES END ===== -->
 
-  <link href="style.css" rel="stylesheet">
+  <link href="style1.css" rel="stylesheet">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#siteNav" data-bs-offset="80" tabindex="0">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <symbol id="car" viewBox="0 0 64 64">
+                <path d="M13 29l5-12c1-3 3-4 6-4h16c3 0 5 1 6 4l5 12z"/>
+                <rect x="5" y="27" width="54" height="22" rx="7"/>
+                <rect x="1" y="29" width="7" height="5" rx="2.5"/>
+                <rect x="56" y="29" width="7" height="5" rx="2.5"/>
+                <rect x="8" y="46" width="11" height="10" rx="3.5"/>
+                <rect x="45" y="46" width="11" height="10" rx="3.5"/>
+                <path fill="#0b1f3a" d="M19.500 27l3.200-8.500c.3-.8.9-1.200 1.800-1.200h15c.9 0 1.500.4 1.800 1.200l3.200 8.500z"/>
+                <circle cx="16" cy="37" r="3.500" fill="#0b1f3a"/>
+                <circle cx="48" cy="37" r="3.500" fill="#0b1f3a"/>
+                <rect x="25" y="38" width="14" height="3.500" rx="1.700" fill="#0b1f3a"/>
+            </symbol>
+        </svg>
 
 <!-- ===== NAVBAR START ===== -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top sdc-nav" id="siteNav">
@@ -100,13 +115,18 @@
     <button class="carousel-control-next" data-bs-target="#heroSlider" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
   </div>
   <!-- Info strip over the slider -->
-  <div class="hero-strip d-none d-md-block">
+
+  <div class="road">
+                    <span class="car">🚗</span>
+                </div>
+
+  <!-- 
     <div class="container d-flex justify-content-between flex-wrap gap-2">
       <span><i class="bi bi-geo-alt-fill"></i> Soan Garden, Islamabad, Gate No. 01</span>
       <a href="tel:+923315340282"><i class="bi bi-telephone-fill"></i> 0331 5340282</a>
       <a href="mailto:shahdrivingcenter@gmail.com"><i class="bi bi-envelope-fill"></i> shahdrivingcenter@gmail.com</a>
     </div>
-  </div>
+  </div> -->
 </section>
 <!-- ===== HOME / SLIDER END ===== -->
 
@@ -279,92 +299,65 @@
 <!-- ===== COURSES END ===== -->
 
 <!-- ===== HOW TO ENROL START ===== -->
-<section class="enrol-section">
-  <div class="container">
-    <div class="enrol-intro">
-      <h2>Four simple steps</h2>
-      <p>Start driving on the date you choose.</p>
-    </div>
-
-    <div class="enrol-panel">
-      <div class="enrol-flow" aria-label="How to enrol">
-        <svg class="enrol-svg" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+<section id="enrol">
+  <div class="w">
+    <span class="eb" data-t>How to enrol</span>
+    <h2 data-t>Four simple steps</h2>
+    <p class="sub" data-t>Start driving on the date you choose.</p>
+    <div class="jr rv">
+      <div class="jw">
+        <svg viewBox="0 0 1000 220" aria-hidden="true">
           <defs>
-            <linearGradient id="enrol-road-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f76523"/>
-              <stop offset="25%" stop-color="#f7a12a"/>
-              <stop offset="50%" stop-color="#f4d821"/>
-              <stop offset="75%" stop-color="#7ed85a"/>
-              <stop offset="100%" stop-color="#2cc7a7"/>
+            <linearGradient id="jg" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stop-color="#f2551d"/>
+              <stop offset=".5" stop-color="#f5a524"/>
+              <stop offset="1" stop-color="#10b981"/>
             </linearGradient>
           </defs>
-          <path d="M 78 120 C 180 40, 270 82, 310 120 S 490 175, 610 120 S 800 42, 920 118" stroke="url(#enrol-road-gradient)" stroke-width="5" stroke-linecap="round" stroke-dasharray="12 12" fill="none"/>
+            <path id="jp" d="M125 70C250 70 250 150 375 150S500 70 625 70S750 150 875 150" fill="none" stroke="url(#jg)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 10"/>
+            <g id="jc">
+              <use href="#car" x="-24" y="-48" width="48" height="48" fill="#f6b400"/>
+            </g>
         </svg>
-
-        <div class="enrol-node enrol-node-1">
-          <div class="node-badge">01</div>
-        </div>
-        <div class="enrol-node enrol-node-2">
-          <div class="node-badge">02</div>
-        </div>
-        <div class="enrol-node enrol-node-3">
-          <div class="node-badge">03</div>
-        </div>
-        <div class="enrol-node enrol-node-4">
-          <div class="node-badge">04</div>
-        </div>
-
-        <div class="car-mover" aria-hidden="true">
-          <i class="bi bi-car-front-fill"></i>
-        </div>
+          <span class="nd" style="--nc:#f2551d;--x:12.5%;--y:31.8%">01</span>
+          <span class="nd" style="--nc:#f08a1c;--x:37.5%;--y:68.2%">02</span>
+          <span class="nd" style="--nc:#7fb236;--x:62.5%;--y:31.8%">03</span>
+          <span class="nd" style="--nc:#10b981;--x:87.5%;--y:68.2%">04</span>
       </div>
-
-      <div class="row g-4 text-center enrol-cards">
-        <div class="col-sm-6 col-lg-3">
-          <div class="step-box">
-            <span class="step-tag">STEP 01 • CHOOSE</span>
-            <div class="step-heading">
-              <!-- <span class="step-number step-number-1">01</span> -->
-              <h5>Choose a course</h5>
-            </div>
-            <p>Pick the package that suits you.</p>
+        <div class="jl">
+          <div class="js" style="--nc:#f2551d">
+              <span class="nb">01</span>
+              <em class="pl2" data-t>Step 01 • Choose</em>
+              <h3 data-t>Choose a course</h3>
+              <p data-t>Pick the package that suits you.</p>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="step-box">
-            <span class="step-tag">STEP 02 • APPLY</span>
-            <div class="step-heading">
-              <!-- <span class="step-number step-number-2">02</span> -->
-              <h5>Fill the form</h5>
-            </div>
-            <p>Submit your details.</p>
+          <div class="js" style="--nc:#f08a1c">
+              <span class="nb">02</span>
+              <em class="pl2" data-t>Step 02 • Apply</em>
+              <h3 data-t>Fill the form</h3>
+              <p data-t>Submit your details.</p>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="step-box">
-            <span class="step-tag">STEP 03 • PAY</span>
-            <div class="step-heading">
-              <!-- <span class="step-number step-number-3">03</span> -->
-              <h5>Pay the fee</h5>
-            </div>
-            <p>Share your payment receipt.</p>
+          <div class="js" style="--nc:#7fb236">
+              <span class="nb">03</span>
+              <em class="pl2" data-t>Step 03 • Pay</em>
+              <h3 data-t>Pay the fee</h3>
+              <p data-t>Share your payment receipt.</p>
           </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="step-box">
-            <span class="step-tag">STEP 04 • DRIVE</span>
-            <div class="step-heading">
-              <!-- <span class="step-number step-number-4">04</span> -->
-              <h5>Start driving</h5>
-            </div>
-            <p>Begin on your chosen date.</p>
+          <div class="js" style="--nc:#10b981">
+              <span class="nb">04</span>
+              <em class="pl2" data-t>Step 04 • Drive</em>
+              <h3 data-t>Start driving</h3>
+              <p data-t>Begin on your chosen date.</p>
           </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 <!-- ===== HOW TO ENROL END ===== -->
+
+<a href="https://wa.me/923315340282" target="_blank" rel="noopener" class="floating-chat" aria-label="WhatsApp chat">
+    <i class="bi bi-whatsapp"></i>
+</a>
 
 <!-- ===== ADMISSION FORM START ===== -->
 <section id="admission" class="sec sec-bg sec-light" style="--bgimg:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=60')">
@@ -381,107 +374,148 @@
       </div>
 
       <form id="admissionForm" class="admission-form" novalidate>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <label class="form-label">First name</label>
-            <input name="first_name" class="form-control" required>
+        <div class="admission-stepper" aria-label="Admission progress">
+          <div class="step-item active">
+            <span class="step-no">1</span>
+            <span class="step-text">Profile</span>
           </div>
-          <div class="col-md-4">
-            <label class="form-label">Middle name</label>
-            <input name="middle_name" class="form-control">
+          <div class="step-item">
+            <span class="step-no">2</span>
+            <span class="step-text">Contact</span>
           </div>
-          <div class="col-md-4">
-            <label class="form-label">Last name</label>
-            <input name="last_name" class="form-control" required>
+          <div class="step-item">
+            <span class="step-no">3</span>
+            <span class="step-text">Course</span>
           </div>
+          <div class="step-item">
+            <span class="step-no">4</span>
+            <span class="step-text">Review</span>
+          </div>
+        </div>
 
-          <div class="col-md-6">
-            <label class="form-label">Father name</label>
-            <input name="father_name" class="form-control" required>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">CNIC no</label>
-            <input name="cnic" class="form-control" placeholder="12345-1234567-1" pattern="\d{5}-\d{7}-\d" required>
-          </div>
+        <div class="form-step active" data-step="1">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <label class="form-label">First name</label>
+              <input name="first_name" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Middle name</label>
+              <input name="middle_name" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Last name</label>
+              <input name="last_name" class="form-control" required>
+            </div>
 
-          <div class="col-md-4">
-            <label class="form-label">Gender</label>
-            <select name="gender" class="form-select" required>
-              <option value="">Select</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Date of birth</label>
-            <input type="date" name="dob" class="form-control" required>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">License status</label>
-            <select name="license_status" class="form-select" required>
-              <option value="">Select</option>
-              <option>No license</option>
-              <option>Learner permit</option>
-              <option>Already have a license</option>
-            </select>
-          </div>
+            <div class="col-md-6">
+              <label class="form-label">Father name</label>
+              <input name="father_name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">CNIC no</label>
+              <input name="cnic" class="form-control" placeholder="12345-1234567-1" pattern="\d{5}-\d{7}-\d" required>
+            </div>
 
-          <div class="col-md-6">
-            <label class="form-label">Contact no</label>
-            <input type="tel" name="phone" class="form-control" placeholder="03XX XXXXXXX" required>
+            <div class="col-md-4">
+              <label class="form-label">Gender</label>
+              <select name="gender" class="form-select" required>
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Date of birth</label>
+              <input type="date" name="dob" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">License status</label>
+              <select name="license_status" class="form-select" required>
+                <option value="">Select</option>
+                <option>No license</option>
+                <option>Learner permit</option>
+                <option>Already have a license</option>
+              </select>
+            </div>
           </div>
-          <div class="col-md-6">
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" required>
-          </div>
+        </div>
 
-          <div class="col-md-6">
-            <label class="form-label">Profile image</label>
-            <input type="file" name="profile" id="profileInput" class="form-control" accept="image/*" required>
-            <img id="profilePreview" class="preview d-none" alt="Profile preview">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Address</label>
-            <textarea name="address" class="form-control" rows="3" required></textarea>
-          </div>
+        <div class="form-step" data-step="2">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label class="form-label">Contact no</label>
+              <input type="tel" name="phone" class="form-control" placeholder="03XX XXXXXXX" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
 
-          <div class="col-md-4">
-            <label class="form-label">Training package</label>
-            <select name="package" class="form-select" required>
-              <option value="">Select</option>
-              <option>Bike + License - Rs 8,000</option>
-              <option>Car Auto + Manual - Rs 20,000</option>
-              <option>Car - Rs 12,000</option>
-              <option>Car Auto + Manual - Rs 35,000</option>
-              <option>LTV - 45 lessons - Rs 40,000</option>
-              <option>LTV - 30 lessons - Rs 25,000</option>
-              <option>LTV - 15 lessons - Rs 15,000</option>
-            </select>
+            <div class="col-md-6">
+              <label class="form-label">Profile image</label>
+              <input type="file" name="profile" id="profileInput" class="form-control" accept="image/*" required>
+              <img id="profilePreview" class="preview d-none" alt="Profile preview">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Address</label>
+              <textarea name="address" class="form-control" rows="3" required></textarea>
+            </div>
           </div>
-          <div class="col-md-4">
-            <label class="form-label">Payment method</label>
-            <select name="payment" class="form-select" required>
-              <option value="">Select</option>
-              <option>Cash</option>
-              <option>Bank transfer</option>
-              <option>JazzCash</option>
-              <option>Easypaisa</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Starting date</label>
-            <input type="date" name="start_date" class="form-control" required>
-          </div>
+        </div>
 
-          <div class="col-12">
-            <label class="form-label">Receipt picture</label>
-            <input type="file" name="receipt" id="receiptInput" class="form-control" accept="image/*" required>
-            <img id="receiptPreview" class="preview d-none" alt="Receipt preview">
-          </div>
+        <div class="form-step" data-step="3">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <label class="form-label">Training package</label>
+              <select name="package" class="form-select" required>
+                <option value="">Select</option>
+                <option>Bike + License - Rs 8,000</option>
+                <option>Car Auto + Manual - Rs 20,000</option>
+                <option>Car - Rs 12,000</option>
+                <option>Car Auto + Manual - Rs 35,000</option>
+                <option>LTV - 45 lessons - Rs 40,000</option>
+                <option>LTV - 30 lessons - Rs 25,000</option>
+                <option>LTV - 15 lessons - Rs 15,000</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Payment method</label>
+              <select name="payment" class="form-select" required>
+                <option value="">Select</option>
+                <option>Cash</option>
+                <option>Bank transfer</option>
+                <option>JazzCash</option>
+                <option>Easypaisa</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Starting date</label>
+              <input type="date" name="start_date" class="form-control" required>
+            </div>
 
-          <div class="col-12">
-            <div class="terms">
+            <div class="col-12">
+              <label class="form-label">Receipt picture</label>
+              <input type="file" name="receipt" id="receiptInput" class="form-control" accept="image/*" required>
+              <img id="receiptPreview" class="preview d-none" alt="Receipt preview">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <div class="review-card">
+            <h5>Review your details</h5>
+            <div class="review-grid">
+              <div><span>Personal</span><strong id="review-name">-</strong></div>
+              <div><span>Phone</span><strong id="review-phone">-</strong></div>
+              <div><span>CNIC</span><strong id="review-cnic">-</strong></div>
+              <div><span>Course</span><strong id="review-course">-</strong></div>
+              <div><span>Payment</span><strong id="review-payment">-</strong></div>
+              <div><span>Start date</span><strong id="review-date">-</strong></div>
+            </div>
+
+            <div class="terms mt-3">
               <h6>Terms and Conditions</h6>
               <ol>
                 <li>All information provided is accurate and true.</li>
@@ -496,11 +530,15 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-12 admission-actions">
-            <button class="btn btn-warning btn-lg" type="submit">Submit admission</button>
-            <div id="admissionMsg" class="mt-3" role="status"></div>
+        <div class="col-12 admission-actions">
+          <div class="step-actions">
+            <button class="btn btn-outline-dark btn-lg step-btn step-prev" type="button">Back</button>
+            <button class="btn btn-warning btn-lg step-btn step-next" type="button">Next</button>
+            <button class="btn btn-warning btn-lg step-btn step-submit" type="submit">Submit admission</button>
           </div>
+          <div id="admissionMsg" class="mt-3" role="status"></div>
         </div>
       </form>
     </div>
@@ -569,15 +607,15 @@
 <section id="faq" class="sec sec-bg sec-dark" style="--bgimg:url('https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=60')">
   <div class="container" style="max-width:820px">
     <div class="sec-head"><h2>Common questions</h2></div>
-    <div class="accordion" id="faq">
+    <div class="accordion" id="faqAccordion">
       <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">Can Bike + License?</button></h3>
-        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">Yes. The Basic course starts from zero, with no driving experience needed.</div></div></div>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. The Basic course starts from zero, with no driving experience needed.</div></div></div>
       <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">Do you help with the sign test?</button></h3>
-        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Yes. Use the sign test and sign book sections on this page, or join the Test Preparation course.</div></div></div>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Use the sign test and sign book sections on this page, or join the Test Preparation course.</div></div></div>
       <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">Are fees refundable?</button></h3>
-        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">No. Fees are non-refundable after admission, as stated in the terms and conditions.</div></div></div>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. Fees are non-refundable after admission, as stated in the terms and conditions.</div></div></div>
       <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">How do I check my application?</button></h3>
-        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Use the Tracking ID section and search with your phone or CNIC number.</div></div></div>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Use the Tracking ID section and search with your phone or CNIC number.</div></div></div>
     </div>
   </div>
 </section>
@@ -697,6 +735,6 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+<script src="script1.js"></script>
 </body>
 </html>
