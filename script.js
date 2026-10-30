@@ -65,6 +65,89 @@ ajaxForm('#contactForm', 'api/contact.php', '#contactMsg', 'Message sent. Thank 
 ajaxForm('#loginForm', 'api/login.php', '#loginMsg', 'Logged in successfully.');
 /* ===== AJAX HELPERS END ===== */
 
+/* ===== ADMISSION STEP NAV START ===== */
+(function () {
+  var form = document.getElementById('admissionForm');
+  if (!form) return;
+
+  var steps = Array.from(form.querySelectorAll('.form-step'));
+  var stepItems = Array.from(document.querySelectorAll('.step-item'));
+  var prevBtn = form.querySelector('.step-prev');
+  var nextBtn = form.querySelector('.step-next');
+  var submitBtn = form.querySelector('.step-submit');
+  var currentStep = 0;
+
+  function updateReview() {
+    var first = form.querySelector('[name="first_name"]').value.trim();
+    var last = form.querySelector('[name="last_name"]').value.trim();
+    var phone = form.querySelector('[name="phone"]').value.trim();
+    var cnic = form.querySelector('[name="cnic"]').value.trim();
+    var course = form.querySelector('[name="package"]').value.trim();
+    var payment = form.querySelector('[name="payment"]').value.trim();
+    var startDate = form.querySelector('[name="start_date"]').value.trim();
+
+    document.getElementById('review-name').textContent = (first || 'Unknown') + (last ? ' ' + last : '');
+    document.getElementById('review-phone').textContent = phone || '-';
+    document.getElementById('review-cnic').textContent = cnic || '-';
+    document.getElementById('review-course').textContent = course || '-';
+    document.getElementById('review-payment').textContent = payment || '-';
+    document.getElementById('review-date').textContent = startDate || '-';
+  }
+
+  function updateStepUI() {
+    steps.forEach(function (step, index) {
+      step.classList.toggle('active', index === currentStep);
+    });
+
+    stepItems.forEach(function (item, index) {
+      item.classList.toggle('active', index === currentStep);
+      item.classList.toggle('complete', index < currentStep);
+    });
+
+    prevBtn.style.display = currentStep === 0 ? 'none' : 'inline-flex';
+    nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-flex';
+    submitBtn.style.display = currentStep === steps.length - 1 ? 'inline-flex' : 'none';
+
+    if (currentStep === steps.length - 1) {
+      updateReview();
+    }
+  }
+
+  function validateCurrentStep() {
+    var fields = steps[currentStep].querySelectorAll('input, select, textarea');
+    for (var i = 0; i < fields.length; i++) {
+      var field = fields[i];
+      if (field.required && !field.checkValidity()) {
+        field.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  prevBtn.addEventListener('click', function () {
+    if (currentStep > 0) {
+      currentStep -= 1;
+      updateStepUI();
+    }
+  });
+
+  nextBtn.addEventListener('click', function () {
+    if (!validateCurrentStep()) return;
+    currentStep += 1;
+    updateStepUI();
+  });
+
+  form.addEventListener('input', updateReview);
+  form.addEventListener('change', updateReview);
+  form.addEventListener('reset', function () {
+    currentStep = 0;
+    updateStepUI();
+  });
+  updateStepUI();
+})();
+/* ===== ADMISSION STEP NAV END ===== */
+
 
 /* ===== TRACKING SEARCH START ===== */
 // Looks up an application by phone or CNIC with Ajax (GET)
@@ -121,3 +204,75 @@ $('.filter-btn').on('click', function () {
   });
 });
 /* ===== COURSE FILTER END ===== */
+
+
+
+(function () {
+    var section = document.querySelector('#enrol');
+    if (!section) return;
+
+    var journey = section.querySelector('.jr');
+    var path = section.querySelector('#jp');
+    var car = section.querySelector('#jc');
+    var nodes = section.querySelectorAll('.nd');
+
+    if (!journey || !path || !car) return;
+
+    var X = [125, 375, 625, 875];
+    var length = path.getTotalLength();
+    var visible = false;
+    var reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    var startTime = performance.now();
+
+    // Observe when the enrol section enters the viewport
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            visible = entries[0].isIntersecting;
+
+            if (visible) {
+                journey.classList.add('in');
+            }
+        }, {
+            threshold: 0.15
+        });
+
+        observer.observe(journey);
+    } else {
+        visible = true;
+        journey.classList.add('in');
+    }
+
+    // Animate the car along the SVG path
+    function animate(time) {
+        if (visible || reducedMotion) {
+            var progress = reducedMotion
+                ? 1
+                : ((time - startTime) % 9000) / 9000;
+
+            var point = path.getPointAtLength(
+                progress * length
+            );
+
+            car.setAttribute(
+                'transform',
+                'translate(' + point.x + ',' + point.y + ')'
+            );
+
+            nodes.forEach(function (node, index) {
+                node.classList.toggle(
+                    'act',
+                    point.x >= X[index] - 4
+                );
+            });
+        }
+
+        if (!reducedMotion) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+})();
