@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; }
 
 @keyframes rd {
     to {
-        transform: translateX(-92px);
+        transform: translateYX(-92px);
     }
 }
 
@@ -64,10 +64,10 @@ h1, h2, h3, h4, h5 { font-weight: 700; }
 
 @keyframes dr {
     0% {
-        left: -80px;
+        left: calc(100% + 20px);
     }
     100% {
-        left: calc(100% + 20px);
+        left: -80px;
     }
 }
 /* ========================= */
@@ -881,16 +881,16 @@ section { scroll-margin-top: 62px; }
 #enrol .eb {
   display: block;
   margin-bottom: 0.9rem;
-  color: #7ca7ff;
+  color: #7fa8ff;
   font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
 #enrol h2 {
   margin: 0;
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: clamp(2.8rem, 4vw, 5rem);
   line-height: 0.96;
   letter-spacing: -0.06em;
   color: #edf5ff;
