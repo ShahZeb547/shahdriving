@@ -424,8 +424,12 @@
               <label class="form-label">License status</label>
               <select name="license_status" class="form-select" required>
                 <option value="">Select</option>
-                <option>No license</option>
+                <option>Select license</option>
                 <option>Learner permit</option>
+                <option>Bike license</option>
+                <option>Car license</option>
+                <option>LTV license</option>
+                <option>Without license</option>
                 <option>Already have a license</option>
               </select>
             </div>
@@ -487,7 +491,7 @@
 
             <div class="col-12">
               <label class="form-label">Receipt picture</label>
-              <input type="file" name="receipt" id="receiptInput" class="form-control" accept="image/*" required>
+              <input type="file" name="receipt" id="receiptInput" class="form-control" accept="image/*">
               <img id="receiptPreview" class="preview d-none" alt="Receipt preview">
             </div>
           </div>
